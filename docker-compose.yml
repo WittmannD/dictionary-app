@@ -1,0 +1,25 @@
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    command: python app/manage.py runserver 0.0.0.0:${BACKEND_PORT}
+    env_file: ./.env.dev
+    volumes:
+      - ./backend:/app
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: postgres:14.2-alpine
+    restart: on-failure
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+    - ${DB_PORT}:${DB_PORT}
