@@ -21,3 +21,6 @@ Migrations
 - To exit `docker exit`
 
 More about migrations cli [in docs](https://docs.djangoproject.com/en/4.1/topics/migrations/)
+
+___
+By default, app starts at http://localhost:8000. API documentation available at [/swagger](http://localhost:8000/swagger) route
