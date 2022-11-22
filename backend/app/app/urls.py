@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 from rest_framework.schemas import get_schema_view
 
 
-urlpatterns = [path(r"admin/", admin.site.urls), path(r"api/", include("api.urls"))]
+urlpatterns = []
 
 if getattr(settings, "DEBUG", False):
     dev_urlpatterns = [
@@ -40,6 +40,8 @@ if getattr(settings, "DEBUG", False):
             ),
             name="openapi-schema",
         ),
+        path(r"admin/", admin.site.urls),
+        path(r"api/", include("api.urls")),
     ]
 
     urlpatterns += dev_urlpatterns
