@@ -7,6 +7,7 @@ ___
 - Configured `PostgreSQL`
 - `docker-compose`
 
+
 ### Bootstrap project using Docker Compose
 - To build (rebuild) `docker-compose --env-file=.env.dev up --build`
 - To start without building `docker-compose --env-file=.env.dev up`
