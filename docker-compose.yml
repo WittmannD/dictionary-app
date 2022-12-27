@@ -13,6 +13,16 @@ services:
     depends_on:
       - db
 
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    depends_on:
+      - backend
+
   db:
     container_name: db
     image: postgres:14.2-alpine

@@ -11,8 +11,8 @@ ___
 
 ### Bootstrap
 
-#### Manually starting
-Start up backend project
+#### Manually
+To start up backend app:
 ```shell
 cd backend
 python -m venv .venv
@@ -21,20 +21,20 @@ pip install requirements-dev.txt
 python app/manage.py runserver
 ```
 
-Start up frontend project:
+To start up frontend app:
 ```shell
 cd frontend
 npm install
 npm start
 ```
 
-#### Bootstrap project using Docker Compose
+#### Bootstrap both applications using Docker Compose
 - To build (rebuild) `docker-compose --env-file=.env.dev up --build`
 - To start without building `docker-compose --env-file=.env.dev up`
 - To stop `docker-compose --env-file=.env.dev down`
 - To execute commands in docker container context `docker exec -it backend sh`
 
-By default, app starts at http://localhost:8000
+By default, DRF app runs at http://localhost:8000 and Next.js at http://localhost:3000. Swagger docs are available at http://localhost:8000/swagger
 
 ***Don't forget to run migrations on first run***
 
