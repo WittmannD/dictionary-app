@@ -1,0 +1,8 @@
+{
+  "steps": [
+    {
+      "name": "lint-staged",
+      "command": "npx lint-staged"
+    }
+  ]
+}

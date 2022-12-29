@@ -1,0 +1,18 @@
+{
+  "type": "python",
+  "venvActivate": "./.venv/bin/activate",
+  "steps": [
+    {
+      "name": "sorting imports",
+      "command": "isort . --profile black"
+    },
+    {
+      "name": "formatting code",
+      "command": "black . --preview --config ./pyproject.toml"
+    },
+    {
+      "name": "code checking",
+      "command": "flake8 . --config ./.flake8"
+    }
+  ]
+}
